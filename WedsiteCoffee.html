@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Coffee Website</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<header>
+    <a href="#" class="logo">
+        <img src="./image/logo.png" alt="Logo">
+    </a>
+
+    <i class='bx bx-menu' id="menu-icon"></i>
+
+    <ul class="navbar" id="navbar">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#customers">Customers</a></li>
+    </ul>
+
+    <div class="header-icons">
+        <i class='bx bx-cart-alt'></i>
+        <i class='bx bx-search' id="search-icon"></i>
+    </div>
+
+    <div class="search-box" id="search-box">
+        <input type="text" placeholder="Search here...">
+    </div>
+</header>
+
+<!-- Home -->
+<section class="home" id="home">
+    <div class="home-text">
+        <h1>Welcome to Our Coffee Shop</h1>
+        <p>Discover the finest coffee blends and enjoy a cozy atmosphere.</p>
+        <a href="#" class="btn">Shop Now</a>
+    </div>
+
+    <div class="home-image">
+        <img src="./image/coffee-cup.png" alt="Coffee">
+    </div>
+</section>
+
+<!-- JavaScript -->
+<script>
+    // Mobile menu toggle
+    const menuIcon = document.getElementById('menu-icon');
+    const navbar = document.getElementById('navbar');
+
+    menuIcon.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+    });
+
+    // Search box toggle
+    const searchIcon = document.getElementById('search-icon');
+    const searchBox = document.getElementById('search-box');
+
+    searchIcon.addEventListener('click', () => {
+        searchBox.style.display = searchBox.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Close search when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!searchBox.contains(e.target) && e.target !== searchIcon) {
+            searchBox.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>
